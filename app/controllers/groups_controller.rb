@@ -7,4 +7,10 @@ class GroupsController < ApplicationController
 	def show
 		@group = Group.find(params[:id])
 	end
+
+	# GET
+	# display the add group view
+	def new
+		@group = Group.new
+	end
 end
