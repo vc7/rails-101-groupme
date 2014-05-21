@@ -21,6 +21,11 @@ class GroupsController < ApplicationController
 		redirect_to groups_path # return to the group's index page
 	end
 
+	# Display edit view
+	def edit
+		@group = Group.find(params[:id])
+	end
+
 	private
 
 	def group_params
