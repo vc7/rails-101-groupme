@@ -37,6 +37,16 @@ class GroupsController < ApplicationController
 		end
 	end
 
+	# destroy a group
+	def destroy
+		@group = Group.find(params[:id])
+
+		@group.destroy
+
+		redirect_to groups_path
+	end
+	
+
 	private
 
 	def group_params
