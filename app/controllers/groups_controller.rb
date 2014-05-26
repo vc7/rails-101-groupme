@@ -6,6 +6,7 @@ class GroupsController < ApplicationController
 	# GET groups/:id with show action
 	def show
 		@group = Group.find(params[:id])
+		@posts = @group.posts # fetch posts by given group
 	end
 
 	# GET
