@@ -23,6 +23,14 @@ class PostsController < ApplicationController
 	end
 
 	def update
+		@group = Group.find(params[:group_id])
+		@post = @group.posts.find(params[:id])
+
+		if @post.update(post_params)
+			redirect_to group_path(@group)
+		else
+			redirect_to :edit
+		end
 	end
 
 	private
